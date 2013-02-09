@@ -22,8 +22,8 @@ node['mythtv']['mythweb']['pkgs'].each do |pkg|
 end
 
 service "mythweb" do
-  if (platform?("ubuntu") && node.platform_version.to_f >= 10.04)
-    provider Chef::Provider::Service::Upstart
+  if (platform?("ubuntu") || platform?("debian"))
+    provider Chef::Provider::Service::Init::Debian
   end
   supports  :status => true, :restart => true
   action    [:enable, :start]
