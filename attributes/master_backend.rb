@@ -18,5 +18,3 @@
 #
 
 node.set['mythtv']['master_backend']['pkgs'] = %w{mythtv-backend-master}
-
-node.set['mythtv']['master_backend']['pkgs'] = %w{mythweb}
